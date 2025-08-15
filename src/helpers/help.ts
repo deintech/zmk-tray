@@ -17,7 +17,7 @@ export const openHelp = async (): Promise<void> => {
   }
 
   if (layer !== 'KBD') {
-    const imagePath = `assets/layers/${os}/${layer}.png`
+    const imagePath = `assets/layers/${layer}.png`
     const helpPath = path.join(fileURLToPath(import.meta.url), '../..', imagePath)
 
     if (os === 'macos') {

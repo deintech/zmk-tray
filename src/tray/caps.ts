@@ -75,7 +75,7 @@ export const set = (tray: Tray, key?: Caps): void => {
     reset(tray)
   }
 
-  // Toogle caps state
+  // Toggle caps state
   if (key === null || key === undefined) {
     const current = caps === 'ON' ? 'OFF' : 'ON'
     store.set('caps', current)

@@ -16,8 +16,7 @@ app.whenReady().then(() => {
   const os = detectOs()
   store.set('os', os)
 
-  let theme = 'light'
-  theme = detectTheme()
+  const theme = detectTheme() || 'light'
   store.set('theme', theme)
 
   // Hide dock icon
