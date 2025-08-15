@@ -16,7 +16,7 @@ const getDefaultIcon = (): NativeImage => {
   return iconLayerKbd
 }
 
-const reset = (tray: Tray): void => {
+export const reset = (tray: Tray): void => {
   const iconImageKbd = getDefaultIcon()
   tray.setImage(iconImageKbd)
   tray.setToolTip('Waiting...')
@@ -36,10 +36,11 @@ export const set = (tray: Tray, key: Layers): void => {
 }
 
 export const create = (app: App): Tray => {
-  const menu = exitMenu(app)
 
   const iconLayerKbd = getDefaultIcon()
   const tray = new Tray(iconLayerKbd)
+  const menu = exitMenu(app, tray)
+
   tray.setToolTip('Waiting...')
   tray.setContextMenu(menu)
   return tray

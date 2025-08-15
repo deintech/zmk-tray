@@ -23,7 +23,7 @@ const icons: Record<Caps, string> = {
   'CW-OFF': 'Caps Word: OFF'
 }
 
-const reset = (tray: Tray): void => {
+export const reset = (tray: Tray): void => {
   const current = 'OFF'
   store.set('caps', current)
   update(tray, current)
@@ -43,10 +43,10 @@ const update = (tray: Tray, key: Caps): void => {
 }
 
 export const create = (app: App): Tray => {
-  const menu = exitMenu(app)
-
   const iconImageOff = getOffIcon()
   const tray = new Tray(iconImageOff)
+  const menu = exitMenu(app, tray)
+
   tray.setToolTip('Waiting...')
   tray.setContextMenu(menu)
   return tray
