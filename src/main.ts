@@ -20,7 +20,7 @@ app.whenReady().then(() => {
   store.set('theme', theme)
 
   // Hide dock icon
-  app.dock.hide()
+  app.dock?.hide()
 
   // Caps keyboard shortcuts
   capsTray = createCapsTray(app)
